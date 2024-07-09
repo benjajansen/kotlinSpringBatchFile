@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: transaction_file
+
+  profiles:
+    active: local
+
+  batch:
+    job:
+      enabled: false
+      name: ${job.name:NONE}
+    jdbc:
+      initialize-schema: always
+
+logging:
+  level:
+    ROOT: WARN
+    org.hibernate.SQL: WARN
+    org.hibernate.orm.jdbc.bind: WARN
+    com.zaxxer.hikari.HikariConfig: WARN
+
+
+input:
+  #directory: "C:/Sandbox/kotlin/transaction_file/src/main/resources/records.csv"
+  file: classpath:records.csv
+
+output:
+  valid: src/main/resources/output/valid.csv
+  all: src/main/resources/output/validatedTransactions.csv
+
+generated:
+  output:
+    directory: src/main/resources/gen/records.csv

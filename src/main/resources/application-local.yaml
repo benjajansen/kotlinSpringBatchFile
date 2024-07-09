@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    batch:
+      pool-name: batch-db
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3307/bank?characterEncoding=utf8
+      username: root
+      password: admin
